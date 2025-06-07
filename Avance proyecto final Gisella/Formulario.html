@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <!--Link de Sitio SweetAlert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Link CSS -->
+     <link rel="stylesheet" href="./css/Factura.css">
+</head>
+<body>
+    <center>
+        <h1>FACTURA DE VENTA - PEDIDOS</h1>
+        <a href="index.html"><img src=".//img/FACTORY-LOGO-PACK_CUPCAKES-FACTORY-LOGO-PRINCIPAL-MEDIUM.png" alt="" class="img-responsive logo" width="100" height="100"></a>
+        
+
+        
+        <!-- Seción de Formulario con Controles -->
+        <form action="" method="post">
+            <table> <caption>Pedidos</caption>
+                <tr>
+                    <th>Nombre del Cliente</th><td>
+                        <input type="text" size="20"></td><th>Tipo de Documento</th>
+                        <th>
+                            <select name="tipodoc" id="tp">
+                                <option value="CC">CC</option>
+                                <option value="CE">CE</option>
+                                <option value="NIT">NIT</option>
+                            </select>
+                        </th>
+                        <th>No. Documento
+                            <td>
+                                <input type="text" name="ndoc" id="" size="25">
+                            </td>
+                        </th>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Dirección</th><td><input type="text" name="dir" id="" size="20"></td>
+                    <th>Teléfono</th><td><input type="text" name="tel" id="" size="20"></td>
+                    <th>Vendedor
+                        <td><input type="text" name="vend" id="" size="20"></td>
+                    </th>
+                </tr>
+                <!-- Sección detalle de pedido -->
+                <tr>
+                    <th>Referencia</th>
+                    <th colspan="2">Descripción</th>
+                    <th>Cantidad</th>
+                    <th>Valor Unitario</th>
+                    <th>Subtotal</th>
+                </tr>
+
+                <!-- Sección de selección de comidas a pedir -->
+                <tr>
+                    <th><select name="" id="prod1" onchange="mostrar()">
+                        <option>Seleccionar</option>
+                        <option value="7000">Postre Maracuyá</option>
+                        <option value="6500">Postre Arequipe</option>
+                        <option value="6500">Postre Frutos Rojos</option>
+                        <option value="7500">Postre Tres leches</option>
+                    </select></th>
+                    <th colspan="2"><input type="text" name="" id="desc01" size="40"></th>
+                    <th><input type="number" name="" id="cant01" size="10"></th>
+                    <th><input type="number" name="" id="vau01" size="15" disabled></th>
+                    <th><input type="text" name="" id="vat01" size="15" disabled></th>
+                </tr>
+                
+
+                <tr>
+                    <th><select name="" id="prod2" onchange="mostrar()">
+                        <option>Seleccionar</option>
+                        <option value="7000">Postre Maracuyá</option>
+                        <option value="6500">Postre Arequipe</option>
+                        <option value="6500">Postre Frutos Rojos</option>
+                        <option value="7500">Postre Tres leches</option>
+                    </select></th>
+                    <th colspan="2"><input type="text" name="" id="desc02" size="40"></th>
+                    <th><input type="number" name="" id="cant02" size="10"></th>
+                    <th><input type="number" name="" id="vau02" size="15" disabled></th>
+                    <th><input type="text" name="" id="vat02" size="15" disabled></th>
+                </tr>
+
+                <tr>
+                    <th><select name="" id="prod3" onchange="mostrar()">
+                        <option>Seleccionar</option>
+                        <option value="7000">Postre Maracuyá</option>
+                        <option value="6500">Postre Arequipe</option>
+                        <option value="6500">Postre Frutos Rojos</option>
+                        <option value="7500">Postre Tres leches</option>
+                    </select></th>
+                    <th colspan="2"><input type="text" name="" id="desc03" size="40"></th>
+                    <th><input type="number" name="" id="cant03" size="10"></th>
+                    <th><input type="number" name="" id="vau03" size="15" disabled></th>
+                    <th><input type="text" name="" id="vat03" size="15" disabled></th>
+                </tr>
+
+                <!-- Sección de adicionales -->
+                <tr>
+                    <th colspan="6">Adicionales</th>
+                </tr>
+                <tr>
+                    <th colspan="2" rowspan="2"><img src="https://dam.buhlergroup.com/rendition/aaa18dbb62e74808ae6cc4ecdfac64de/-TwebHeader_1x1" alt="Oblea"><br><input type="checkbox" name="adic" id="checkbox1">Oblea</th>
+                    <th colspan="2" rowspan="2"><img src="https://tekla-cbg.s3.eu-west-3.amazonaws.com/images/large/3547000_CBG_FRONTAL_6b8107caff.png" alt="helado"><br><input type="checkbox" name="adic" id="checkbox2">Helado de vainilla</th>
+                    <th colspan="2" rowspan="2"><img src="https://static.vecteezy.com/system/resources/thumbnails/036/573/483/small/small-water-bottle-png.png" alt="Agua"><br><input type="checkbox" name="adic" id="checkbox3">Jugo HIT</th>
+                </tr>
+
+                <!-- Seccion de liquidación de la factura -->
+                <tr></tr>
+                <tr>
+                    <th colspan="4">Total Adicionales</th>
+                    <th colspan="2"><input type="text" name="" id="adic0" disabled></th>
+                </tr>
+                <tr>
+                    <th colspan="2">Forma de pago</th>
+                    <th colspan="2">
+                        <input type="radio" name="fp" id="radio1"> Efectivo <br>
+                        <input type="radio" name="fp" id="radio2"> Nequi <br>
+                        <input type="radio" name="" id="radio3"> Tarjeta </th>
+                    <th>Subtotal</th><td><input type="text" name="" id="subt" size="25" disabled></td>
+                </tr>
+
+                <tr>
+                    <th colspan="4" rowspan="3">Observaciones: Revise su pedido al entregarlo. <br> ¡GRACIAS POR SU COMPRA!</th>
+                    <th>IVA</th><td><input type="text" name="" id="iva" size="25" disabled></td>
+                </tr>
+
+                <tr>
+                    <th>Descuento</th>
+                    <td><input type="text" name="" id="desc" size="25" disabled></td>
+                </tr>
+
+                <tr>
+                    <th>NETO</th>
+                    <td><input type="text" name="" id="neto" size="25" disabled></td>
+                </tr>
+
+                <tr>
+                    <th colspan="2"><input type="button" value="CALCULAR PAGO" onclick="mostrar()"></th>
+                    <th colspan="2"><input type="reset" value="BORRAR"></th>
+                    <th colspan="2"><input type="button" value="ENVIAR" onclick="enviar()"></th>
+                </tr>
+
+            </table>
+        </form>
+    </center>
+    <script src="/js/Factura.js"></script>
+</body>
+</html>
